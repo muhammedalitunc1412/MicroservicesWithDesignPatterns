@@ -22,7 +22,7 @@ namespace Order.API.Consumer
 
             if (order != null)
             {
-                order.Status = OrderStatus.Complete;
+                order.Status = OrderStatus.Succes;
                 await _context.SaveChangesAsync();
 
                 _logger.LogInformation($"Order (Id={context.Message.orderId}) status changed : {order.Status}");
