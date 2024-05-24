@@ -1,9 +1,8 @@
-﻿
-
-using MassTransit;
+﻿using MassTransit;
 using Shared;
 using Shared.Events;
 using Shared.Interfaces;
+using Shared.Messages;
 
 namespace SagaStateMachineWorkerService.Model
 {

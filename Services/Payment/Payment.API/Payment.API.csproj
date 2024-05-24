@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Consumer\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
 

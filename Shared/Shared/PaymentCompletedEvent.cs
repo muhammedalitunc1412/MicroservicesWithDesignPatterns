@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public class PaymentCompletedEvent
+    public class PaymentCompletedEvent : IPaymentCompletedEvent
     {
-        public int orderId { get; set; }
+        public PaymentCompletedEvent(Guid correlationId)
+        {
+            CorrelationId = correlationId;
+        }
 
-        public string BuyerId { get; set; }
+        public Guid CorrelationId { get; }
     }
 }

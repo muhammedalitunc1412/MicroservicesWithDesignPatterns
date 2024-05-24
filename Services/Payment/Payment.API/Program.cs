@@ -1,4 +1,6 @@
 using MassTransit;
+using Payment.API.Consumer;
+using Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,11 @@ builder.Services.AddMassTransit(x =>
     x.UsingRabbitMq((context, cfg) =>
     {
         cfg.Host(builder.Configuration.GetConnectionString("RabbitMQ"));
-       
+
+        cfg.ReceiveEndpoint(RabbitMQSettingsConst.PaymentStockReservedRequestQueueName, e =>
+        {
+            e.ConfigureConsumer<StockReservedRequestPaymentConsumer>(context);
+        });
     });
 });
 

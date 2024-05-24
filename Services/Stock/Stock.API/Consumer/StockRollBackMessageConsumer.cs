@@ -1,5 +1,6 @@
 ﻿using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using Shared.Messages;
 using Stock.API.Model;
 
 namespace Stock.API.Consumer
