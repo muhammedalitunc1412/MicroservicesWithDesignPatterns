@@ -1,15 +1,14 @@
-﻿using Shared.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared
+namespace Shared.Events
 {
-    public class OrderCreatedEvent : IOrderCreatedEvent
+    public class StockReservedEvent : IStockReservedEvent
     {
-        public OrderCreatedEvent(Guid correlationId)
+        public StockReservedEvent(Guid correlationId)
         {
             CorrelationId = correlationId;
         }

@@ -5,15 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared
+namespace Shared.Events
 {
-    public class OrderCreatedEvent : IOrderCreatedEvent
+    public class PaymentFailedEvent : IPaymentFailedEvent
     {
-        public OrderCreatedEvent(Guid correlationId)
+        public PaymentFailedEvent(Guid correlationId)
         {
             CorrelationId = correlationId;
         }
 
+        public string Reason { get; set; }
         public List<OrderItemMessage> OrderItems { get; set; }
 
         public Guid CorrelationId { get; }
